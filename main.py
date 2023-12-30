@@ -153,7 +153,7 @@ def classification(sample):
   #             13: 'R', 14: 'S', 15: 'T', 16: 'U', 17: 'V', 18: 'X', 19: 'Y', 20: 'Z', 21: '0', 22: '1', 23: '2', 24: '3',
   #             25: '4', 26: '5', 27: '6', 28: '7', 29: '8', 30: '9', 31: "Background"}
 
-  model = load_model("../model/15_epochs_model2.h5")
+  model = load_model("model/15_epochs_model2.h5")
   
   sample = np.array(sample, "float")
   sample = sample.reshape(sample.shape[0], sample.shape[1], sample.shape[2], 1) / 255
@@ -180,7 +180,7 @@ def classification2(sample):
                    14: 'E', 15: 'F', 16: 'G', 17: 'H', 18: 'K', 19: 'L', 
                    20: 'M', 21: 'N', 22: 'P', 23: 'R', 24: 'S', 25: 'T', 
                    26: 'U', 27: 'V', 28: 'X', 29: 'Y', 30: 'Z'}
-  SVM = load("../model/SVM3.joblib")
+  SVM = load("model/SVM3.joblib")
   
   sample = np.array(sample, np.uint8)
   sample = sample.reshape(sample.shape[0], -1)
@@ -350,7 +350,7 @@ if __name__ == "__main__":
   frame = Frame(root)
   frame.pack(side=BOTTOM, padx=15, pady=15)
 
-  img1 = Image.open("../images/default.png")
+  img1 = Image.open("images/default.png")
   resizeImg = img1.resize((640,395), Image.Resampling.LANCZOS)
   convertedImg = ImageTk.PhotoImage(resizeImg)
 
